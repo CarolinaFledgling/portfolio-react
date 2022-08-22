@@ -14,7 +14,7 @@ const NavBar = () => {
                 <img src={logo} alt="logo" />
             </div>
             <ul className='app__navbar-links'>
-                {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
+                {['home', 'skills', 'projects', 'contact'].map((item) => (
                     <li className='app_flex p-text' key={`link-${item}`}>
                         <div>
                         </div>
@@ -31,7 +31,7 @@ const NavBar = () => {
                         transition={{ duration: 0.85, ease: 'easeOut' }}>
                         <HiX onClick={() => setToggleNav(false)} />
                         <ul>
-                            {['home', 'about', 'skills', 'projects', 'footer'].map((item) => (
+                            {['home','skills', 'projects', 'contact'].map((item) => (
                                 <li key={item}>
                                     <a href={`#${item}`} onClick={() => setToggleNav(false)} >{item}</a>
                                 </li>

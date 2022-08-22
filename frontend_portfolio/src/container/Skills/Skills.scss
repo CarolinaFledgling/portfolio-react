@@ -1,0 +1,53 @@
+.app__skills {
+    width: 100%;
+}
+
+.app__skills-profiles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.app__profile-item {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media screen and (min-width: 2000px) {
+        width: 370px;
+        margin: 2rem 4rem;
+    }
+}
+
+.app__profile-title {
+    font-size: 1.5rem;
+    margin-top: 20px;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 4rem;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+}
+
+.app__profile-description {
+    border-bottom: 1px solid var(--lightblue-color);
+    padding: 0.1em;
+    list-style: none;
+}
+
+.app__profile-skill {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 0.6rem;
+    color: var(--black-color);
+}
+
