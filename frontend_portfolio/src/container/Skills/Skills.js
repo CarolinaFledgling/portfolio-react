@@ -5,8 +5,22 @@ import './Skills.scss'
 
 const Skills = () => {
 
+  const [skills, setSkills] = useState([])
+
+  useEffect(() => {
+    const query = '*[_type == "skills"]';
 
 
+    client.fetch(query).then((data) => {
+      setSkills(data)
+      console.log(data)
+    })
+
+  }, [])
+
+
+
+  /*
   const skills = [
     {
       title: 'Good understanding',
@@ -21,6 +35,7 @@ const Skills = () => {
       descriptions: ["React", "MUI", "React", "MUI", "React", "MUI",]
     },
   ]
+  */
 
   return (
     <div id="skills" className='app__skills'>

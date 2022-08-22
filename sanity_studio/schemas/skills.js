@@ -5,22 +5,15 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'name',
-            title: 'Name',
+            name: 'title',
+            title: 'Title',
             type: 'string'
         },
         {
-            name: 'bgColor',
-            title: 'BgColor',
-            type: 'string'
-        },
-        {
-            name: 'icon',
-            title: 'Icon',
-            type: 'image',
-            options: {
-                hotspot: true,
-            },
+            name: 'description',
+            title: 'Description',
+            type: 'array',
+            of: [{ type: 'string' }]
         },
 
     ]
