@@ -13,7 +13,9 @@ const Skills = () => {
 
     client.fetch(query).then((data) => {
       setSkills(data)
+
       console.log(data)
+
     })
 
   }, [])
@@ -45,7 +47,7 @@ const Skills = () => {
       >
         <h2 className="head-text">It is not easy to assess your own<span className="gradient__text"> skills</span></h2>
         <div className="app__skills-profiles">
-          {skills.map((skill, index) => (
+          {skills?.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: 1 }}
               whileHover={{ scale: 1.1 }}
@@ -55,7 +57,7 @@ const Skills = () => {
             >
               <h3 className="app__profile-title" >{skill.title}</h3>
               <p className="p-text" style={{ marginTop: 10 }}>{skill.description}</p>
-              {skill.descriptions.map((description, index) => (
+              {skill?.descriptions?.map((description, index) => (
                 <ul
                   key={`description-${index}`}
                   className="app__profile-description"
