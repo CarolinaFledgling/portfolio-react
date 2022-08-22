@@ -20,8 +20,8 @@
     align-items: center;
 
     img {
-        width: 90px;
-        height: 20px;
+        
+        height: 25px;
         //2000px extra large devices
         @media screen and (min-width: 1024px) {
             width: 180px;
@@ -34,7 +34,7 @@
     //take up the rest of the space, that logo doesnt take
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     list-style: none;
@@ -57,7 +57,8 @@
             flex-direction: column;
 
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 400;
+            letter-spacing: 0.04em;
 
             transition: all 0.3s ease-in-out;
 
@@ -168,3 +169,5 @@
         display: none;
     }
 }
+
+

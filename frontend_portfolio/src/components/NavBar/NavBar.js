@@ -9,12 +9,12 @@ import './NavBar.scss'
 const NavBar = () => {
     const [toggleNav, setToggleNav] = useState(false)
     return (
-        <nav className='app__navbar'>
+        <nav className='app__navbar navbar__section-padding'>
             <div className='app__navbar-logo'>
                 <img src={logo} alt="logo" />
             </div>
             <ul className='app__navbar-links'>
-                {['home', 'about', 'skills', 'projects', 'footer'].map((item) => (
+                {['home', 'about', 'skills', 'projects', 'contact'].map((item) => (
                     <li className='app_flex p-text' key={`link-${item}`}>
                         <div>
                         </div>
