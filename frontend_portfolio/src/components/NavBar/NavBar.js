@@ -11,10 +11,10 @@ const NavBar = () => {
     return (
         <nav className='app__navbar navbar__section-padding'>
             <div className='app__navbar-logo'>
-                <img src={logo} alt="logo" />
+                <span className="gradient__text">Karolina.K</span>
             </div>
             <ul className='app__navbar-links'>
-                {['home', 'skills', 'projects', 'contact'].map((item) => (
+                {['header', 'skills', 'projects', 'contact'].map((item) => (
                     <li className='app_flex p-text' key={`link-${item}`}>
                         <div>
                         </div>
@@ -31,7 +31,7 @@ const NavBar = () => {
                         transition={{ duration: 0.85, ease: 'easeOut' }}>
                         <HiX onClick={() => setToggleNav(false)} />
                         <ul>
-                            {['home','skills', 'projects', 'contact'].map((item) => (
+                            {['header', 'skills', 'projects', 'contact'].map((item) => (
                                 <li key={item}>
                                     <a href={`#${item}`} onClick={() => setToggleNav(false)} >{item}</a>
                                 </li>

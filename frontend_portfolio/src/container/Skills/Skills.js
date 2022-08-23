@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { urlFor, client } from '../../client';
 import './Skills.scss'
+import { AppWrap } from '../../wrapper';
 
 const Skills = () => {
 
@@ -13,10 +14,11 @@ const Skills = () => {
 
     client.fetch(query).then((data) => {
       setSkills(data)
-
       console.log(data)
-
     })
+      .catch((error) => {
+        console.error("Sanity fetching failed", error);
+      });
 
   }, [])
 
@@ -41,10 +43,7 @@ const Skills = () => {
 
   return (
     <div id="skills" className='app__skills'>
-      <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
-      >
+   
         <h2 className="head-text">It is not easy to assess your own <span className="gradient__text"> skills</span></h2>
         <div className="app__skills-profiles">
           {skills?.map((skill, index) => (
@@ -67,9 +66,6 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-
-
-      </motion.div>
     </div>
   )
 }

@@ -10,9 +10,10 @@ export default {
             type: 'string'
         },
         {
-            name: 'description',
-            title: 'Description',
-            type: 'string'
+            title: "Description",
+            name: "textBlock",
+            type: "array",
+            of: [{ type: "block" }],
         },
         {
             name: 'imgUrl',

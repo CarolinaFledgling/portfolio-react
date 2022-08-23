@@ -1,6 +1,12 @@
 .app__header {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+      
+    }
 }
 
 .app__header-content {
@@ -14,13 +20,14 @@
         font-weight: 700;
         font-size: 62px;
         line-height: 75px;
+        margin-bottom: 2rem;
     }
 
     p {
         font-weight: 400;
         font-size: 20px;
-        line-height: 28px;
-        margin-top: 0.5rem;
+        line-height: 150%;
+        margin-top: 0.7rem;
         width: 90%;
         letter-spacing: 0.04em;
     }

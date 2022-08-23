@@ -15,19 +15,7 @@
 }
 
 .app__navbar-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    img {
-        
-        height: 25px;
-        //2000px extra large devices
-        @media screen and (min-width: 1024px) {
-            width: 180px;
-            height: 40px;
-        }
-    }
+    font-size: 1.8rem;
 }
 
 .app__navbar-links {
@@ -169,5 +157,3 @@
         display: none;
     }
 }
-
-
