@@ -45,7 +45,7 @@ const Skills = () => {
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="head-text">It is not easy to assess your own<span className="gradient__text"> skills</span></h2>
+        <h2 className="head-text">It is not easy to assess your own <span className="gradient__text"> skills</span></h2>
         <div className="app__skills-profiles">
           {skills?.map((skill, index) => (
             <motion.div
@@ -56,8 +56,7 @@ const Skills = () => {
               key={skill.title + index}
             >
               <h3 className="app__profile-title" >{skill.title}</h3>
-              <p className="p-text" style={{ marginTop: 10 }}>{skill.description}</p>
-              {skill?.descriptions?.map((description, index) => (
+              {skill?.description?.map((description, index) => (
                 <ul
                   key={`description-${index}`}
                   className="app__profile-description"
