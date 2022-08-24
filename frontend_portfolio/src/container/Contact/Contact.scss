@@ -1,5 +1,5 @@
 .app__contact {
-    background: url("https://www.toptal.com/designers/subtlepatterns/uploads/email-pattern.png");
+    background-color: var(--bg-second-color);
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
@@ -8,24 +8,43 @@
     margin-top: 6rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+
+    @media only screen and (max-width: 1124px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.app__contact-img {
+    padding: 1rem 3rem;
 }
 
 .app__contact-form {
-    flex: 2;
+    flex: 1;
 }
 
 .app__contact-details {
     flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--primary-color);
 }
 
 .app__contact-detail {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
 
     img {
-        width: 20px;
+        width: 40px;
         margin-right: 20px;
         @media only screen and (max-width: 480px) {
             width: 15px;
@@ -35,16 +54,21 @@
     a {
         display: flex;
         align-items: center;
+        justify-content: center;
         color: inherit;
         text-decoration: none;
 
         img {
-            width: 20px;
+            width: 40px;
             margin-right: 20px;
             @media only screen and (max-width: 480px) {
                 width: 15px;
             }
         }
+    }
+
+    span {
+        font-weight: 700;
     }
 }
 
@@ -52,33 +76,123 @@
     width: 350px;
     padding: 20px;
     margin-bottom: 1rem;
+
+    padding: 0.95rem;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--primary-color);
+
+    font-family: var(--font-base);
+    color: var(--secondary-color);
+    outline: none;
     @media only screen and (max-width: 480px) {
-        padding: 5px;
+        padding: 15px;
     }
 }
 
 .app__contact-form-box textarea {
     width: 350px;
-    height: 60%;
-    padding: 20px;
+    height: 100px;
+
+    padding: 0.95rem;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--primary-color);
+
+    font-family: var(--font-base);
+    color: var(--secondary-color);
+    outline: none;
+
+    resize: none;
     @media only screen and (max-width: 480px) {
-        padding: 5px;
+        padding: 15px;
         margin-top: 20px;
     }
 }
 
 .app__contact-btn {
     width: 350px;
+
     border: none;
     padding: 15px;
-    background-color: darkblue;
+    background-color: var(--red-color);
     color: white;
     font-size: 20px;
     border-radius: 10px;
     margin-top: 20px;
     cursor: pointer;
     @media only screen and (max-width: 480px) {
-        padding: 5px;
-        font-size: 14px;
+        padding: 13px;
+        font-size: 1rem;
     }
+}
+
+select {
+    margin: 1rem 0;
+    width: 350px;
+    height: 60%;
+    padding: 20px;
+
+    padding: 0.95rem;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 700;
+}
+
+.app__contact-heading {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.app__contact-social {
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+    justify-content: space-around;
+
+    div {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--red-color);
+        margin: 1rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: all 0.3s ease-in-out;
+
+        svg {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-color);
+        }
+
+        &:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--red-color);
+        }
+
+        @media screen and (min-width: 2000px) {
+            width: 70px;
+            height: 70px;
+
+            margin: 0.5rem 0;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+.app__contact-social .github {
+    background-color: var(--black-color);
+}
+
+.app__contact-social .linkedin {
+    background-color: #0a66c2;
 }
