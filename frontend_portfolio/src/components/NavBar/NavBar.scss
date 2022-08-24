@@ -1,9 +1,5 @@
 .app__navbar {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
     background-color: #d8eefe40;
     // blur effect
     backdrop-filter: blur(4px);
@@ -15,7 +11,26 @@
 }
 
 .app__navbar-logo {
-    font-size: 1.8rem;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-decoration: #d8eefe wavy underline;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+
+    @media screen and (max-width: 900px) {
+        font-size: 1.1rem;
+    }
+}
+
+.app__navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
 }
 
 .app__navbar-links {

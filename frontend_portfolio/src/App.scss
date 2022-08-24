@@ -3,7 +3,6 @@
     font-family: var(--font-base);
 }
 
-
 .app__container {
     width: 100%;
     display: flex;
@@ -15,8 +14,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.app__wrapper {
 }
 
 .p-text {
@@ -101,26 +98,6 @@
     }
 }
 
-// RWD
-
-.section__padding {
-    padding: 7rem 4rem;
-}
-
-.section__margin {
-    margin: 4rem 6rem;
-}
-
-@media screen and (max-width: 900px) {
-    .section__padding {
-        padding: 6rem 4rem;
-    }
-
-    .section__margin {
-        margin: 4rem;
-    }
-}
-
 .gradient__text {
     background: var(--gradient-text);
     background-clip: text;
@@ -128,10 +105,53 @@
     -webkit-text-fill-color: transparent;
     font-weight: 700;
     text-decoration: #d8eefe wavy underline;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0 0.4rem;
+
+    @media screen and (max-width: 900px) {
+        font-size: 1.1rem;
+    }
 }
 
-.span-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    padding: 0 0.5rem;
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+//Layout
+
+.section {
+    padding: 6rem 0;
+    @media (min-width: 40em) {
+        section {
+            padding: 7rem 0;
+        }
+    }
+}
+
+.container {
+    margin-inline: auto;
+    width: #{"min(90%, 70.5rem)"};
+}
+
+.split {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 40em) {
+    .split {
+        flex-direction: row;
+    }
+
+    .split > * {
+        flex-basis: 100%;
+    }
+
+    .split > * + * {
+        margin-left: 2em;
+    }
 }

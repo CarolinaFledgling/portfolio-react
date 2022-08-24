@@ -5,7 +5,6 @@
 
     @media screen and (max-width: 900px) {
         flex-direction: column;
-      
     }
 }
 
@@ -16,33 +15,44 @@
     align-items: flex-start;
     flex-direction: column;
 
+    @media screen and (max-width: 900px) {
+        align-items: center;
+    }
+
     h1 {
         font-weight: 700;
-        font-size: 62px;
-        line-height: 75px;
-        margin-bottom: 2rem;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
     }
 
     p {
         font-weight: 400;
-        font-size: 20px;
+        font-size: 1.3rem;
         line-height: 150%;
         margin-top: 0.7rem;
         width: 90%;
         letter-spacing: 0.04em;
+
+        @media screen and (max-width: 900px) {
+            font-size: 1.1rem;
+        }
     }
 }
 
 .app__header-image {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+
+    @media screen and (max-width: 900px) {
+        justify-content: center;
+    }
 }
 
 .app__header-image img {
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 90%;
 }
 
 @media screen and (max-width: 1050px) {
@@ -81,9 +91,29 @@
 
 .app__header-bold {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 1.3rem;
     line-height: 28px;
     margin-top: 0.5rem;
     width: 90%;
     letter-spacing: 0.04em;
+
+    @media screen and (max-width: 900px) {
+        font-size: 1rem;
+    }
+}
+
+.span-text {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-decoration: #d8eefe wavy underline;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 900px) {
+        font-size: 1.1rem;
+    }
 }
