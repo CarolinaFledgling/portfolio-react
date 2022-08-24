@@ -29,7 +29,20 @@ const Projects = () => {
 
 
 
-    const handleProjectFilter = () => {
+    const handleProjectFilter = (item) => {
+        setActiveFilter(item)
+        setAnimateCard([{ y: 100, opacity: 0 }]);
+
+        setTimeout(() => {
+            setAnimateCard([{ y: 0, opacity: 1 }]);
+
+            if (item === "All") {
+                setFilterProjects(projects)
+            } else {
+                const filteredProjectItem = projects.filter((project) => project.tags.includes(item))
+                setFilterProjects(filteredProjectItem)
+            }
+        }, 500)
 
     }
     return (
