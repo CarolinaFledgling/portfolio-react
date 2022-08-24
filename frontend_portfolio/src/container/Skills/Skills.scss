@@ -1,14 +1,13 @@
 .app__skills {
-    width: 100%;
     background-color: var(--bg-second-color);
-    padding: 2rem;
-    border-radius:50px;
 
+    border-radius: 50px;
 }
 
 .app__skills-profiles {
+    margin-top: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
     cursor: pointer;
@@ -19,7 +18,11 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin: 2rem 4rem;
+
+    @media screen and (max-width: 900px) {
+        align-items: center;
+        flex-basis: 100%;
+    }
 }
 
 .app__profile-title {
@@ -28,13 +31,15 @@
     margin-bottom: 20px;
 
     @media screen and (min-width: 2000px) {
-        font-size: 4rem;
+        font-size: 3rem;
+    }
+
+    @media screen and (max-width: 900px) {
+        font-size: 1.3rem;
     }
 
     @media screen and (max-width: 450px) {
-        font-size: 1rem;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        font-size: 1.1rem;
     }
 }
 
@@ -49,4 +54,9 @@
     font-size: 1.2rem;
     margin-top: 0.6rem;
     color: var(--black-color);
+
+    @media screen and (max-width: 900px) {
+        font-size: 1rem;
+        text-align: center;
+    }
 }

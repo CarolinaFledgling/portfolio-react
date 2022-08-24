@@ -42,9 +42,9 @@ const Skills = () => {
   */
 
   return (
-    <div id="skills" className='app__skills'>
-   
-        <h2 className="head-text">It is not easy to assess your own <span className="gradient__text"> skills</span></h2>
+    <div id="skills" className='app__skills section'>
+      <div className='container'>
+        <h2 className="heading-text">It is not easy to assess your own <span className="color-text"> skills.</span></h2>
         <div className="app__skills-profiles">
           {skills?.map((skill, index) => (
             <motion.div
@@ -66,6 +66,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
+      </div>
     </div>
   )
 }

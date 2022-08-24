@@ -3,9 +3,6 @@
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width: 900px) {
-        flex-direction: column;
-    }
 }
 
 .app__header-content {
@@ -45,9 +42,11 @@
     justify-content: flex-end;
     align-items: center;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1024px) {
         justify-content: center;
     }
+
+   
 }
 
 .app__header-image img {
@@ -55,7 +54,7 @@
     height: 90%;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1023px) {
     .app__header {
         flex-direction: column;
     }
