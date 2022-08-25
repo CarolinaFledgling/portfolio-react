@@ -172,7 +172,7 @@ const Contact = () => {
               <div className="app__contact-form-box">
                 <h3 className='app__contact-heading'>Choose an option:</h3>
                 <select name="reason" onChange={handleChangeInput}>
-                  <option value="" selected disabled hidden>-- Please choose an option --</option>
+                  <option value="" defaultValue >-- Please choose an option --</option>
                   <option value="job offer"> 1. I have a job offer for you! 😊</option>
                   <option value="checking, if you get this message in your Sanity Studio"> 2. I'm just checking, if you get this message in your Sanity Studio 😂</option>
                 </select>

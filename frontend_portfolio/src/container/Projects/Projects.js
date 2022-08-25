@@ -49,7 +49,7 @@ const Projects = () => {
             <div className='container'>
                 <h2 className="heading-text">There's nothing quite like building <span className="color-text"> projects</span>  to grow coding skills.</h2>
                 <div className='app__project-filter'>
-                    {["React", "Wordpress", "HTML/CS/JS", "Agency projects", "All"].map((item, index) => {
+                    {["React", "Wordpress", "HTML/CS/JS", "Picapoint", "All"].map((item, index) => {
                         return (
                             <div
                                 key={`project-${index}`}
@@ -72,13 +72,13 @@ const Projects = () => {
                         const url = getUrlFromProject(project);
                         return (
                             //card
-                            <div className="app__project-item card" key={`project-${index}`}>
+                            <div className="app__project-item" key={`project-${index}`}>
                                 {/* img */}
-                     
-                                    {url ? <img src={getUrlFromProject(project)} alt={project?.name} /> : <span>No Image</span>}
-                        
+
+                                {url ? <img src={getUrlFromProject(project)} alt={project?.name} /> : <span>No Image</span>}
+
                                 {/* card body */}
-                                <div className="app__project-content card-body ">
+                                <div className="app__project-content">
                                     <h4 className="bold-text">{project.title}</h4>
                                     <p className="app__project-description">{project.description}</p>
 
@@ -86,16 +86,18 @@ const Projects = () => {
                                         <p className="app__project-paragraph">{project.tags[0]}</p>
                                     </div>
                                     <div className='app__project-icons'  >
-                                        <a href={project.projectLink} target="_blank" rel="noreferrer">
+
+                                        {project.projectLink ? <a href={project.projectLink} target="_blank" rel="noreferrer">
                                             <div className='app__project-icon'>
                                                 <AiFillEye />
                                             </div>
-                                        </a>
-                                        <a href={project.codeLink} target="_blank" rel="noreferrer">
+                                        </a> : <p className='app__project-noLink'>Link Coming Soon</p>}
+
+                                        {project.codeLink && <a href={project.codeLink} target="_blank" rel="noreferrer">
                                             <div className='app__project-icon'>
                                                 <AiFillGithub />
                                             </div>
-                                        </a>
+                                        </a>}
                                     </div>
                                 </div>
 
@@ -116,7 +118,7 @@ export default Projects
 
 function getUrlFromProject(project) {
     try {
-        let url = getImageBuilder(project?.imgUrl).height(300).url();
+        let url = getImageBuilder(project?.imgUrl).height(220).width(400).url();
         return url;
     } catch (error) {
         console.log('Moj wlasna oblsuga erroru. Poszlo cos nie tak z imgUrl z projektu', error);
