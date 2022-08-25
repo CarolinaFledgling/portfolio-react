@@ -71,32 +71,35 @@ const Projects = () => {
                     {filterProjects?.map((project, index) => {
                         const url = getUrlFromProject(project);
                         return (
-                            <div className="app__project-item app__flex" key={`project-${index}`}>
-                                <div className='app__project-img app__flex'>
+                            //card
+                            <div className="app__project-item card" key={`project-${index}`}>
+                                {/* img */}
+                     
                                     {url ? <img src={getUrlFromProject(project)} alt={project?.name} /> : <span>No Image</span>}
-                                </div>
-
-                                <div className="app__project-content app__flex">
+                        
+                                {/* card body */}
+                                <div className="app__project-content card-body ">
                                     <h4 className="bold-text">{project.title}</h4>
                                     <p className="app__project-description">{project.description}</p>
 
-                                    <div className="app__project-tag app__flex">
+                                    <div className="app__project-tag">
                                         <p className="app__project-paragraph">{project.tags[0]}</p>
+                                    </div>
+                                    <div className='app__project-icons'  >
+                                        <a href={project.projectLink} target="_blank" rel="noreferrer">
+                                            <div className='app__project-icon'>
+                                                <AiFillEye />
+                                            </div>
+                                        </a>
+                                        <a href={project.codeLink} target="_blank" rel="noreferrer">
+                                            <div className='app__project-icon'>
+                                                <AiFillGithub />
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
 
-                                <div className='app__project-icons'  >
-                                    <a href={project.projectLink} target="_blank" rel="noreferrer">
-                                        <div className='app__project-icon'>
-                                            <AiFillEye />
-                                        </div>
-                                    </a>
-                                    <a href={project.codeLink} target="_blank" rel="noreferrer">
-                                        <div className='app__project-icon'>
-                                            <AiFillGithub />
-                                        </div>
-                                    </a>
-                                </div>
+
 
 
                             </div>
