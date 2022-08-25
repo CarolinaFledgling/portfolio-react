@@ -72,10 +72,6 @@
     }
 }
 
-.error-border {
-    border: 1px solid var(--red-color);
-}
-
 .error-text {
     color: var(--red-color);
     margin-bottom: 0.5rem;
@@ -88,7 +84,7 @@
     margin-bottom: 1rem;
 
     padding: 0.95rem;
-    // border: none;
+    border: none;
     border-radius: 7px;
     background-color: var(--primary-color);
 
@@ -97,6 +93,10 @@
     outline: none;
     @media only screen and (max-width: 480px) {
         padding: 15px;
+    }
+
+    .error-border {
+        border: 1px solid var(--red-color);
     }
 }
 
@@ -206,3 +206,4 @@ select {
 .app__contact-social .linkedin {
     background-color: #0a66c2;
 }
+

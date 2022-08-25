@@ -34,15 +34,12 @@ const Contact = () => {
   const { name, email, message, reason } = formData
 
 
-
   const handleChangeInput = (e) => {
     const { name, value } = e.target
     console.log("e.target", e.target)
     // thanks to added own Attributes "name" to input // we can get infor which input is used
     console.log(e.target.name);
 
-    // name:value nie zadzialalo by bo ten name jest dynamiczny, wiec przychodza wartosci z name emaila lub hobby
-    // zeby ten klucz stawic dynamicznie musimy uzyc []
     setFormData({ ...formData, [name]: value })
 
   }
@@ -50,56 +47,42 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
-    // const errorDisplay = (errorField, nameError) => {
-    //   console.log('error in fn', errorField)
-    //   if (!errorField) {
-    //     setErrors({
-    //       ...errors,
-    //       errorField: nameError,
-    //     })
-    //   } else if (errorField) {
-    //     setErrors({
-    //       ...errors,
-    //       errorField: ""
-    //     })
-    //   }
-
-    // }
-
-    setErrors({
-      ...errors,
-      name: '',
-      email: '',
-      message: '',
-      reason: "",
-    })
-
     // ***** Validation FIELD FORM
 
+    console.log("[debug] name error form", { name, error: errors.name })
+
+    let nextErrors = {};
+
     if (!name) {
-      setErrors({
-        ...errors,
+      nextErrors = {
+        ...nextErrors,
         name: "Please enter your name"
-      })
-    } else if (!email || !isValidEmail(email)) {
-      setErrors({
-        ...errors,
-        email: "Please enter a valid email"
-      })
-    } else if (!message) {
-      setErrors({
-        ...errors,
-        message: "Please write message here"
-      })
-    } else if (!reason) {
-      setErrors({
-        ...errors,
-        reason: "Please choose an option 1 or 2"
-      })
+      }
     }
 
-    // errorDisplay(name, "Please enter your name")
+    if (!email || !isValidEmail(email)) {
+      nextErrors = {
+        ...nextErrors,
+        email: "Please enter a valid email"
+      }
+    }
+
+    if (!message) {
+      nextErrors = {
+        ...nextErrors,
+        message: "Please write message here"
+      }
+    }
+
+    if (!reason) {
+      nextErrors = {
+        ...nextErrors,
+        reason: "Please choose an option 1 or 2"
+      }
+    }
+
+    setErrors(nextErrors);
+
 
     if (!name || !email || !message || !reason || !isValidEmail(email)) return;
 
@@ -110,7 +93,7 @@ const Contact = () => {
     const contact = {
       _type: "contact",
       name: name,
-      email: name,
+      email: email,
       message: message,
       reason: reason,
     }
@@ -163,7 +146,10 @@ const Contact = () => {
             </div>
           </div>
 
-      
+          <div className='app__contact-img'>
+            <img src={meditating} alt="meditating" />
+          </div>
+
           {!isFormSubmitted ? <div className='app__contact-form'>
             <form>
               <div className="app__contact-form-box">
@@ -185,9 +171,8 @@ const Contact = () => {
               </div>
               <div className="app__contact-form-box">
                 <h3 className='app__contact-heading'>Choose an option:</h3>
-
                 <select name="reason" onChange={handleChangeInput}>
-                  <option value="">-- Please choose an option --</option>
+                  <option value="" selected disabled hidden>-- Please choose an option --</option>
                   <option value="job offer"> 1. I have a job offer for you! 😊</option>
                   <option value="checking, if you get this message in your Sanity Studio"> 2. I'm just checking, if you get this message in your Sanity Studio 😂</option>
                 </select>
@@ -195,11 +180,12 @@ const Contact = () => {
               </div>
               <button type="button" className="app__contact-btn" onClick={handleSubmit}>{isLoading ? "Sending" : "Send Message"}</button>
             </form>
-          </div> : <div>
-            <h3 className="head-text">
-              Thank you for getting in touch!❤️
-            </h3>
-          </div>}
+          </div> :
+            <div className='app__contact-message'>
+              <h3 className="head-text">
+                Thank you for getting in touch!❤️
+              </h3>
+            </div>}
         </div>
 
 

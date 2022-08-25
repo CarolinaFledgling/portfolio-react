@@ -113,7 +113,7 @@ export default Projects
 
 function getUrlFromProject(project) {
     try {
-        let url = getImageBuilder(project?.imgUrl).width(200).url();
+        let url = getImageBuilder(project?.imgUrl).height(300).url();
         return url;
     } catch (error) {
         console.log('Moj wlasna oblsuga erroru. Poszlo cos nie tak z imgUrl z projektu', error);
