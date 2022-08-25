@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-import { urlFor, client } from '../../client';
+import { getImageBuilder, client } from '../../client';
 import './Projects.scss'
 
 const Projects = () => {
@@ -43,6 +43,7 @@ const Projects = () => {
         }, 500)
 
     }
+
     return (
         <section id="projects" className='app__projects section'>
             <div className='container'>
@@ -68,10 +69,11 @@ const Projects = () => {
                     className="app__project-portfolio"
                 >
                     {filterProjects?.map((project, index) => {
+                        const url = getUrlFromProject(project);
                         return (
                             <div className="app__project-item app__flex" key={`project-${index}`}>
                                 <div className='app__project-img app__flex'>
-                                    <img src={urlFor(project?.imgUrl)} alt={project?.name} />
+                                    {url ? <img src={getUrlFromProject(project)} alt={project?.name} /> : <span>No Image</span>}
                                 </div>
 
                                 <div className="app__project-content app__flex">
@@ -108,3 +110,13 @@ const Projects = () => {
 }
 
 export default Projects
+
+function getUrlFromProject(project) {
+    try {
+        let url = getImageBuilder(project?.imgUrl).width(200).url();
+        return url;
+    } catch (error) {
+        console.log('Moj wlasna oblsuga erroru. Poszlo cos nie tak z imgUrl z projektu', error);
+        return undefined;
+    }
+}

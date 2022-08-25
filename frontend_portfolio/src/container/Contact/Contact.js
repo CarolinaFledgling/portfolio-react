@@ -163,9 +163,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className='app__contact-img'>
-            <img src={meditating} alt="meditating" />
-          </div>
+      
           {!isFormSubmitted ? <div className='app__contact-form'>
             <form>
               <div className="app__contact-form-box">
