@@ -18,6 +18,11 @@ export default {
             name: 'message',
             title: 'Message',
             type: 'text'
+        },
+        {
+            name: 'reason',
+            title: 'Reason',
+            type: 'string'
         }
     ]
 }

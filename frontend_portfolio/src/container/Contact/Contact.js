@@ -89,8 +89,6 @@ const Contact = () => {
               <a href="https://www.linkedin.com/in/karolina-kuli%C5%84ska-870124111/" target="_blank" rel="noreferrer">
                 <div className='app__project-icon linkedin'>
                   <FaLinkedin />
-
-
                 </div>
 
               </a>
@@ -120,8 +118,9 @@ const Contact = () => {
                 <h3 className='app__contact-heading'>Choose an option:</h3>
 
                 <select name="reason" onChange={handleChangeInput}>
-                  <option className='option' value="job offer">I have a job offer for you! 😊 </option>
-                  <option value="checking">I'm just checking, if you get this message in your Sanity Studio 😂</option>
+                  <option value="">-- Please choose an option --</option>
+                  <option value="job offer">I have a job offer for you! 😊</option>
+                  <option value="checking, if you get this message in your Sanity Studio">I'm just checking, if you get this message in your Sanity Studio 😂</option>
                 </select>
               </div>
               <button type="button" className="app__contact-btn" onClick={handleSubmit}>{isLoading ? "Sending" : "Send Message"}</button>
