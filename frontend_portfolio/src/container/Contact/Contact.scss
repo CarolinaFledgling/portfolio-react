@@ -72,13 +72,23 @@
     }
 }
 
+.error-border {
+    border: 1px solid var(--red-color);
+}
+
+.error-text {
+    color: var(--red-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
 .app__contact-form-box input {
     width: 350px;
     padding: 20px;
     margin-bottom: 1rem;
 
     padding: 0.95rem;
-    border: none;
+    // border: none;
     border-radius: 7px;
     background-color: var(--primary-color);
 
@@ -190,7 +200,7 @@ select {
 }
 
 .app__contact-social .github {
-    background-color: var(--black-color);
+    background-color: #333;
 }
 
 .app__contact-social .linkedin {
