@@ -49,7 +49,7 @@ const Projects = () => {
             <div className='container'>
                 <h2 className="heading-text">There's nothing quite like building <span className="color-text"> projects</span>  to grow coding skills.</h2>
                 <div className='app__project-filter'>
-                    {["React", "Wordpress", "HTML/CS/JS", "Picapoint", "All"].map((item, index) => {
+                    {["React", "Wordpress", "HTML/CS/JS", "Picapoint digital agency", "All"].map((item, index) => {
                         return (
                             <div
                                 key={`project-${index}`}
@@ -71,6 +71,7 @@ const Projects = () => {
                     {filterProjects?.map((project, index) => {
                         const url = getUrlFromProject(project);
                         return (
+
                             //card
                             <div className="app__project-item" key={`project-${index}`}>
                                 {/* img */}
@@ -79,7 +80,9 @@ const Projects = () => {
 
                                 {/* card body */}
                                 <div className="app__project-content">
-                                    <h4 className="bold-text">{project.title}</h4>
+                                    <a  href={project.projectLink} target="_blank" rel="noreferrer">
+                                        <h4 className="app__project-title">{project.title}</h4>
+                                    </a>
                                     <p className="app__project-description">{project.description}</p>
 
                                     <div className="app__project-tag">

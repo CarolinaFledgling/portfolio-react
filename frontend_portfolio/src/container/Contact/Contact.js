@@ -137,7 +137,7 @@ const Contact = () => {
                   <FaGithub />
                 </div>
               </a>
-              <a href="https://www.linkedin.com/in/karolina-kuli%C5%84ska-870124111/" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/karolina-kulinska-870124111/" target="_blank" rel="noreferrer">
                 <div className='app__project-icon linkedin'>
                   <FaLinkedin />
                 </div>
@@ -151,6 +151,7 @@ const Contact = () => {
           </div>
 
           {!isFormSubmitted ? <div className='app__contact-form'>
+            <h3 className='app__contact-form-title'>Contact form 📨</h3>
             <form>
               <div className="app__contact-form-box">
                 <input className={`p-text ${errors.name ? 'error-border' : ''}`} type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />

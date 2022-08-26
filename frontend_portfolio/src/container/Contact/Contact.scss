@@ -5,7 +5,7 @@
 }
 
 .app__contact-wrapper {
-    margin-top: 6rem;
+    margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -13,6 +13,10 @@
     @media only screen and (max-width: 1124px) {
         flex-direction: column;
         align-items: center;
+    }
+
+    @media only screen and (max-width: 567px) {
+        margin-top: 3.5rem;
     }
 }
 
@@ -22,6 +26,16 @@
 
 .app__contact-form {
     flex: 1;
+}
+
+.app__contact-form-title {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+
+    @media only screen and (max-width: 567px) {
+        font-size: 1.3rem;
+    }
 }
 
 .app__contact-details {
@@ -206,4 +220,3 @@ select {
 .app__contact-social .linkedin {
     background-color: #0a66c2;
 }
-
