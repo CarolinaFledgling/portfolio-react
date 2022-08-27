@@ -124,7 +124,7 @@ function getUrlFromProject(project) {
         let url = getImageBuilder(project?.imgUrl).height(220).width(400).url();
         return url;
     } catch (error) {
-        console.log('Moj wlasna oblsuga erroru. Poszlo cos nie tak z imgUrl z projektu', error);
+        console.log('Somthing is wrong with url, ', error);
         return undefined;
     }
 }
