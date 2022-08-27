@@ -11,11 +11,18 @@ In the contact section I built a form where someone can enter the name , email, 
 
 **Work-in-Progress**
 
+## In the coming days I am planing : 
+
+- adding onblur events when we leave input in the fields, we should check if it is empty or not.
+- learn how to use and render Portable Text from Sanity, want to use it in the About section. 
+
+- refactoring,  make reusebale components etc.   
+
 ## DEMO Link
 
 [Portfolio](https://karolinakulinskaportfolio.netlify.app/)
 
-
+## See how the form works.
 
 https://user-images.githubusercontent.com/47687566/186982332-7207aae3-18a0-46e1-8aa7-878026f287ad.mp4
 
