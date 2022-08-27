@@ -44,6 +44,39 @@ const Contact = () => {
 
   }
 
+
+  const handleBlur = () => {
+
+    setErrors((prevState) => {
+      console.log('blur error', { prevState })
+      const prevErrorState = {
+        ...prevState
+      }
+      if (prevErrorState.name) {
+        prevErrorState.name = ""
+      } else {
+        prevErrorState.name = "blur error"
+      }
+      if (prevErrorState.email) {
+        prevErrorState.email = ""
+      }
+
+      if (prevErrorState.message) {
+        prevErrorState.message = ""
+      }
+      if (prevErrorState.reson) {
+        prevErrorState.reason = ""
+      }
+
+      return {
+        prevErrorState
+      }
+
+
+
+    })
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -154,11 +187,11 @@ const Contact = () => {
             <h3 className='app__contact-form-title'>Contact form 📨</h3>
             <form>
               <div className="app__contact-form-box">
-                <input className={`p-text ${errors.name ? 'error-border' : ''}`} type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} />
+                <input className={`p-text ${errors.name ? 'error-border' : ''}`} type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} onBlur={handleBlur} />
                 {errors.name ? <p className='error-text'>{errors.name}</p> : ""}
               </div>
               <div className="app__contact-form-box">
-                <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+                <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} onBlur={handleBlur} />
                 {errors.email && <p className='error-text'>{errors.email}</p>}
               </div>
               <div className="app__contact-form-box">
@@ -167,12 +200,13 @@ const Contact = () => {
                   name="message"
                   value={message}
                   onChange={handleChangeInput}
+                  onBlur={handleBlur}
                 />
                 {errors.message && <p className='error-text'>{errors.message}</p>}
               </div>
               <div className="app__contact-form-box">
                 <h3 className='app__contact-heading'>Choose an option:</h3>
-                <select name="reason" onChange={handleChangeInput}>
+                <select name="reason" onChange={handleChangeInput} onBlur={handleBlur}>
                   <option value="" defaultValue >-- Please choose an option --</option>
                   <option value="job offer"> 1. I have a job offer for you! 😊</option>
                   <option value="checking, if you get this message in your Sanity Studio"> 2. I'm just checking, if you get this message in your Sanity Studio 😂</option>

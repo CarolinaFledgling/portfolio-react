@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className='footer'>
       <p>
         &copy;2022 Made with ❤️ by
-        <a href="https://github.com/CarolinaFledgling" class="footer__link">Karolina Kulinska</a>
+        <a href="https://github.com/CarolinaFledgling" className="footer__link">Karolina Kulinska</a>
       </p>
     </footer>
   )
