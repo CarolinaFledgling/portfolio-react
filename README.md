@@ -38,14 +38,10 @@ Clone the project
 ```bash
 
   cd frontend_portfolio
-
-  Install dependencies
-
-
+  # Install dependencies
   npm install
-
-
-`npm run start` to start the frontend locally
+  # to start the frontend locally
+  npm run start 
 
 ```
 
@@ -62,16 +58,11 @@ Clone the project
 ### I`m fetching the data from Sanity Studio.
 
 ```bash
-
   cd sanity_studio
-
-Install dependencies
-
-npm install
-
-
-`sanity start` to start the sanity studio locally
-
+  # Install dependencies
+  npm install
+  # To start the sanity studio locally
+  sanity start 
 ```
 
 - sanity studio should be running on [http://localhost:3333](http://localhost:3333)
