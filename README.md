@@ -13,8 +13,7 @@ In the contact section I built a form where someone can enter the name , email, 
 
 ## In the coming days I am planing : 
 
-- adding onblur events when we leave input in the fields, we should check if it is empty or not.
-- learn how to use and render Portable Text from Sanity, want to use it in the About section. 
+- working  onblur and onFocus events in the form.
 - refactoring,  make reusebale components etc.   
 
 ## DEMO Link
