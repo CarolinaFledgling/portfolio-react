@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import header from '../../assets/header2.svg'
+
 import './Header.scss'
 import { PortableText } from '@portabletext/react'
 import { getImageBuilder, client } from '../../client';
@@ -32,7 +32,7 @@ const Header = () => {
 
         setDataBlockContent(data)
 
-        console.log("[data from about]", { dataBlockContent })
+      
       })
       .catch((err) => {
         console.log("Sanity error in about", { err })

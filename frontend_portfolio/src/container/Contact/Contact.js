@@ -34,55 +34,7 @@ const Contact = () => {
   const { name, email, message, reason } = formData
 
 
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target
-    console.log("e.target", e.target)
-    // thanks to added own Attributes "name" to input // we can get infor which input is used
-    console.log(e.target.name);
-
-    setFormData({ ...formData, [name]: value })
-
-  }
-
-
-  const handleBlur = () => {
-
-    setErrors((prevState) => {
-      console.log('blur error', { prevState })
-      const prevErrorState = {
-        ...prevState
-      }
-      if (prevErrorState.name) {
-        prevErrorState.name = ""
-      } else {
-        prevErrorState.name = "blur error"
-      }
-      if (prevErrorState.email) {
-        prevErrorState.email = ""
-      }
-
-      if (prevErrorState.message) {
-        prevErrorState.message = ""
-      }
-      if (prevErrorState.reson) {
-        prevErrorState.reason = ""
-      }
-
-      return {
-        prevErrorState
-      }
-
-
-
-    })
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // ***** Validation FIELD FORM
-
-    console.log("[debug] name error form", { name, error: errors.name })
+  const validation = () => {
 
     let nextErrors = {};
 
@@ -115,6 +67,34 @@ const Contact = () => {
     }
 
     setErrors(nextErrors);
+  }
+
+
+  const handleChangeInput = (e) => {
+    const { name, value } = e.target
+    console.log("e.target", e.target)
+    // thanks to added own Attributes "name" to input // we can get infor which input is used
+    console.log(e.target.name);
+
+    setFormData({ ...formData, [name]: value })
+
+  }
+
+
+  const handleBlur = () => {
+
+    validation()
+
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+  
+
+    console.log("[debug] name error form", { name, error: errors.name })
+
+    validation()
 
 
     if (!name || !email || !message || !reason || !isValidEmail(email)) return;
