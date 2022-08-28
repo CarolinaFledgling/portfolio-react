@@ -9,7 +9,8 @@ import { getImageBuilder, client } from '../../client';
 
 const myPortableTextComponents = {
   marks: {
-    text: ({ children, value }) => {
+    underline: ({ children, value }) => {
+      console.log("children", { children })
       return (
         <span className="gradient__text">
           {children}
@@ -27,9 +28,10 @@ const Header = () => {
 
     client.fetch(query)
       .then((data) => {
+        console.log("[data from about]", { data })
+
         setDataBlockContent(data)
 
-        console.log("[data from about]", { data }, data[0].title)
         console.log("[data from about]", { dataBlockContent })
       })
       .catch((err) => {
@@ -61,11 +63,13 @@ const Header = () => {
                 <PortableText
                   value={dataBlock.textBlock}
 
-                  serializers={{
-                    span: (props) => <span className="gradient__text" {...props} />,
-                    someCustomType: Header,
+                  // serializers={{
+                  //   span: (props) => <span className="gradient__text" {...props} />,
 
-                  }}
+
+                  // }}
+
+                  components={myPortableTextComponents}
                 />
 
               </div>
