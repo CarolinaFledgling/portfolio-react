@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-import { getImageBuilder, client } from '../../client';
+import { client } from '../../client';
 import './Projects.scss'
+import getUrlFromProject from '../../helpers/getUrlFromProject';
 
 const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('All');
@@ -80,7 +81,7 @@ const Projects = () => {
 
                                 {/* card body */}
                                 <div className="app__project-content">
-                                    <a  href={project.projectLink} target="_blank" rel="noreferrer">
+                                    <a href={project.projectLink} target="_blank" rel="noreferrer">
                                         <h4 className="app__project-title">{project.title}</h4>
                                     </a>
                                     <p className="app__project-description">{project.description}</p>
@@ -119,12 +120,3 @@ const Projects = () => {
 
 export default Projects
 
-function getUrlFromProject(project) {
-    try {
-        let url = getImageBuilder(project?.imgUrl).height(220).width(400).url();
-        return url;
-    } catch (error) {
-        console.log('Somthing is wrong with url, ', error);
-        return undefined;
-    }
-}

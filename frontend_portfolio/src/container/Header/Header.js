@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 
 import './Header.scss'
 import { PortableText } from '@portabletext/react'
-import { getImageBuilder, client } from '../../client';
+import { client } from '../../client';
+import getUrlFromProject from '../../helpers/getUrlFromProject';
 
 
 
@@ -32,7 +33,7 @@ const Header = () => {
 
         setDataBlockContent(data)
 
-      
+
       })
       .catch((err) => {
         console.log("Sanity error in about", { err })
@@ -49,12 +50,12 @@ const Header = () => {
       >
         {dataBlockContent.map((dataBlock, index) => {
           console.log('datablock', { dataBlock })
-          const url = getUrl(dataBlock)
+          const url = getUrlFromProject(dataBlock)
           return (
             <div key={`datablock-${index}`} className="app__header-container">
               <div className="app__header-content">
                 <h1>{dataBlock.title}</h1>
-    
+
                 <PortableText
                   value={dataBlock.textBlock}
                   components={myPortableTextComponents}
@@ -63,7 +64,7 @@ const Header = () => {
               </div>
 
               <div className="app__header-image">
-                {url ? <img src={getUrl(dataBlock)} alt="illustration of a dancing girl" /> : ""}
+                {url ? <img src={getUrlFromProject(dataBlock)} alt="illustration of a dancing girl" /> : ""}
               </div>
             </div>
           )
@@ -79,13 +80,3 @@ const Header = () => {
 export default Header
 
 
-function getUrl(dataBlock) {
-  try {
-    const url = getImageBuilder(dataBlock?.imgUrl).url()
-    return url
-  } catch (err) {
-    console.log(err)
-    return undefined
-  }
-
-}

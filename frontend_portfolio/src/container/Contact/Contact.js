@@ -185,7 +185,7 @@ const Contact = () => {
                 {errors.message && <p className='error-text'>{errors.message}</p>}
               </div>
               <div className="app__contact-form-box">
-                <h3 className='app__contact-heading'>Choose an option:</h3>
+                <h3 className='app__contact-heading'>Check options:</h3>
                 <select name="reason" onChange={handleChangeInput} onBlur={handleBlur}>
                   <option value="" defaultValue >-- Please choose an option --</option>
                   <option value="job offer"> 1. I have a job offer for you! 😊</option>
