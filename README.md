@@ -13,7 +13,8 @@ In the contact section I built a form where someone can enter the name , email, 
 
 ## In the coming days I am planing : 
 
-- working  onblur and onFocus events in the form.
+- working  onblur and onFocus events in the form make it more UX friendly.
+- using react-select package
 - refactoring,  make reusebale components etc.   
 
 ## DEMO Link
