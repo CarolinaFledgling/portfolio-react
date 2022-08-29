@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
 import './Contact.scss'
 import { client } from '../../client';
-
-import Map from "../../assets/map.png";
-import Phone from "../../assets/phone.png";
-import Send from "../../assets/send.png";
-import meditating from '../../assets/meditating.svg'
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import isValidEmail from "../../helpers/isValidEmail"
 import fieldValidation from '../../helpers/fieldValidation';
 import emailValidation from '../../helpers/emailValidation';
 import reasonValidation from '../../helpers/reasonValidation';
-
+import SocialFields from '../../components/SocialFields/SocialFields';
+import ContactDetails from '../../components/ContactDetails/ContactDetails';
+import MeditingImg from '../../components/MeditingImg/MeditingImg';
 
 
 
@@ -132,46 +127,16 @@ const Contact = () => {
   }
 
 
-
   return (
     <section id="contact" className='app__contact section'>
       <div className='container'>
-        <h2 className="heading-text">Let's Get In <span className="color-text"> Touch</span>!</h2>
+        <h2 className="heading-text">Let's Get In <span className="color-text">Touch</span>!</h2>
         <div className='app__contact-wrapper'>
           <div className='app__contact-details'>
-            <div className='app__contact-detail'>
-              <img src={Map} alt=" icon with map" />
-              <span>Norway</span>
-            </div>
-            <div className='app__contact-detail'>
-              <a href="tel:+479670722">
-                <img src={Phone} alt=" icon with phone" />
-                <span>+47 96707225</span>
-              </a>
-            </div>
-            <div className='app__contact-detail'>
-              <a href="mailto:karolina.kulinska89@gmail.com" target="_blank" rel="noopener noreferrer"><img src={Send} alt=" icon with envelope " />
-                <span>karolina.kulinska89@gmail.com</span></a>
-            </div>
-            <div className='app__contact-social'>
-              <a href="https://github.com/CarolinaFledgling" target="_blank" rel="noreferrer">
-                <div className='app__project-icon github'>
-                  <FaGithub />
-                </div>
-              </a>
-              <a href="https://www.linkedin.com/in/karolina-kulinska-870124111/" target="_blank" rel="noreferrer">
-                <div className='app__project-icon linkedin'>
-                  <FaLinkedin />
-                </div>
-
-              </a>
-            </div>
+            <ContactDetails />
+            <SocialFields />
           </div>
-
-          <div className='app__contact-img'>
-            <img src={meditating} alt="meditating" />
-          </div>
-
+          <MeditingImg />
           {!isFormSubmitted ? <div className='app__contact-form'>
             <h3 className='app__contact-form-title'>Contact form 📨</h3>
             <form>
@@ -217,3 +182,7 @@ const Contact = () => {
 }
 
 export default Contact
+
+
+
+

@@ -1,0 +1,28 @@
+
+import Map from "../../assets/map.png";
+import Phone from "../../assets/phone.png";
+import Send from "../../assets/send.png";
+import "./ContactDetails.scss"
+
+function ContactDetails() {
+    return <>
+      <div className='app__contact-detail'>
+        <img src={Map} alt=" icon with map" />
+        <span>Norway</span>
+      </div>
+      <div className='app__contact-detail'>
+        <a href="tel:+479670722">
+          <img src={Phone} alt=" icon with phone" />
+          <span>+47 96707225</span>
+        </a>
+      </div>
+      <div className='app__contact-detail'>
+        <a href="mailto:karolina.kulinska89@gmail.com" target="_blank" rel="noopener noreferrer"><img src={Send} alt=" icon with envelope " />
+          <span>karolina.kulinska89@gmail.com</span></a>
+      </div>
+    </>;
+  }
+
+  
+
+  export default ContactDetails
