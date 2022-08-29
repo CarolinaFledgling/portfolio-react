@@ -14,7 +14,7 @@ const Skills = () => {
 
     client.fetch(query).then((data) => {
       setSkills(data)
-      console.log(data)
+      //console.log(data)
     })
       .catch((error) => {
         console.error("Sanity fetching failed", error);

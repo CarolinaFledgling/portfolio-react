@@ -11,7 +11,7 @@ import getUrlFromProject from '../../helpers/getUrlFromProject';
 const myPortableTextComponents = {
   marks: {
     underline: ({ children, value }) => {
-      console.log("children", { children })
+      //console.log("children", { children })
       return (
         <span className="gradient__text">
           {children}
@@ -29,14 +29,14 @@ const Header = () => {
 
     client.fetch(query)
       .then((data) => {
-        console.log("[data from about]", { data })
+        //console.log("[data from about]", { data })
 
         setDataBlockContent(data)
 
 
       })
       .catch((err) => {
-        console.log("Sanity error in about", { err })
+        //console.log("Sanity error in about", { err })
       })
 
   }, [])
@@ -49,7 +49,7 @@ const Header = () => {
         className='app__header container'
       >
         {dataBlockContent.map((dataBlock, index) => {
-          console.log('datablock', { dataBlock })
+          //console.log('datablock', { dataBlock })
           const url = getUrlFromProject(dataBlock)
           return (
             <div key={`datablock-${index}`} className="app__header-container">

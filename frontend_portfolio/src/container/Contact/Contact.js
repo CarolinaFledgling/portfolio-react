@@ -9,6 +9,9 @@ import meditating from '../../assets/meditating.svg'
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import isValidEmail from "../../helpers/isValidEmail"
+import fieldValidation from '../../helpers/fieldValidation';
+import emailValidation from '../../helpers/emailValidation';
+import reasonValidation from '../../helpers/reasonValidation';
 
 
 
@@ -23,7 +26,6 @@ const Contact = () => {
     message: '',
     reason: "",
   })
-
   const [errors, setErrors] = useState({
     name: '',
     email: '',
@@ -33,11 +35,17 @@ const Contact = () => {
 
   const { name, email, message, reason } = formData
 
+  // Rules validation 
+  // value which we will get from form 
+  const validateRules = {
+    name: (value) => fieldValidation('name', value),
+    message: (value) => fieldValidation('message', value),
+    email: (value) => emailValidation(value),
+    reason: (value) => reasonValidation(value),
+  }
 
-  const validation = () => {
-
+  const validationSubmit = () => {
     let nextErrors = {};
-
     if (!name) {
       nextErrors = {
         ...nextErrors,
@@ -69,37 +77,41 @@ const Contact = () => {
     setErrors(nextErrors);
   }
 
-
   const handleChangeInput = (e) => {
     const { name, value } = e.target
     console.log("e.target", e.target)
-    // thanks to added own Attributes "name" to input // we can get infor which input is used
-    console.log(e.target.name);
+    // thanks to added own Attributes "name" to input // we can get info which input is used
+    // key:attr
 
     setFormData({ ...formData, [name]: value })
-
   }
 
+  const handleBlur = (e) => {
 
-  const handleBlur = () => {
+    const { name, value } = e.target;
 
-    validation()
+    // modify errors objects when we leave input
+
+    // validate  the current value
+    const error = validateRules[name](value)
+    console.log('error validate curent value', error)
+
+    const touchedError = {
+      ...errors,
+      [name]: error
+    }
+    setErrors(touchedError);
+
+    console.log('test values on blur', touchedError)
 
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-  
-
-    console.log("[debug] name error form", { name, error: errors.name })
-
-    validation()
-
+    validationSubmit()
 
     if (!name || !email || !message || !reason || !isValidEmail(email)) return;
-
-
 
     setIsLoading(true)
 
@@ -112,7 +124,6 @@ const Contact = () => {
     }
 
     //Upload data to Sanity 
-
     client.create(contact)
       .then(() => {
         setIsLoading(false)
@@ -127,7 +138,6 @@ const Contact = () => {
       <div className='container'>
         <h2 className="heading-text">Let's Get In <span className="color-text"> Touch</span>!</h2>
         <div className='app__contact-wrapper'>
-
           <div className='app__contact-details'>
             <div className='app__contact-detail'>
               <img src={Map} alt=" icon with map" />
@@ -143,7 +153,6 @@ const Contact = () => {
               <a href="mailto:karolina.kulinska89@gmail.com" target="_blank" rel="noopener noreferrer"><img src={Send} alt=" icon with envelope " />
                 <span>karolina.kulinska89@gmail.com</span></a>
             </div>
-
             <div className='app__contact-social'>
               <a href="https://github.com/CarolinaFledgling" target="_blank" rel="noreferrer">
                 <div className='app__project-icon github'>
@@ -168,7 +177,7 @@ const Contact = () => {
             <form>
               <div className="app__contact-form-box">
                 <input className={`p-text ${errors.name ? 'error-border' : ''}`} type="text" placeholder="Your Name" name="name" value={name} onChange={handleChangeInput} onBlur={handleBlur} />
-                {errors.name ? <p className='error-text'>{errors.name}</p> : ""}
+                {errors.name && <p className='error-text'>{errors.name}</p>}
               </div>
               <div className="app__contact-form-box">
                 <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} onBlur={handleBlur} />
@@ -202,8 +211,6 @@ const Contact = () => {
               </h3>
             </div>}
         </div>
-
-
       </div>
     </section>
   )

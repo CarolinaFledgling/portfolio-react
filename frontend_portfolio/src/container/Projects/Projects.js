@@ -18,10 +18,10 @@ const Projects = () => {
             .then((data) => {
                 setProjects(data)
                 setFilterProjects(data)
-                console.log("[data from projects]", data)
+                //console.log("[data from projects]", data)
             })
             .catch((err) => {
-                console.log("Sanity error in projects", err)
+                //console.log("Sanity error in projects", err)
             })
 
     }, [])
