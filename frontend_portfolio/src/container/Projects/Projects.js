@@ -50,7 +50,7 @@ const Projects = () => {
             <div className='container'>
                 <h2 className="heading-text">There's nothing quite like building <span className="color-text"> projects</span>  to grow coding skills.</h2>
                 <div className='app__project-filter'>
-                    {["React", "HTML/CS/JS", "Picapoint digital agency", "All"].map((item, index) => {
+                    {["React", "HTML/CSS/JS", "Picapoint digital agency", "All"].map((item, index) => {
                         return (
                             <div
                                 key={`project-${index}`}
