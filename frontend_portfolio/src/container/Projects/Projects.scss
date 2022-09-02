@@ -97,7 +97,7 @@
     flex-direction: column;
     height: 100%;
 
-    a{
+    a {
         text-decoration: none;
         color: inherit;
     }
@@ -166,8 +166,29 @@
             background-color: var(--red-color);
         }
     }
-    .app__project-noLink{
+    .app__project-noLink {
         color: var(--red-color);
         cursor: pointer;
+    }
+}
+
+.app-project-button {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 0 0;
+
+    .primary-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.09rem;
+        border: 0.1rem solid transparent;
+        border-radius: 1.8rem;
+        color: white;
+        background: var(--red-color);
+        @media screen and (max-width: 900px) {
+            padding: 0.6rem 1.3rem;
+            font-size: 1rem;
+        }
     }
 }

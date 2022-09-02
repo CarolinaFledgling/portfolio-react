@@ -50,7 +50,7 @@ const Projects = () => {
             <div className='container'>
                 <h2 className="heading-text">There's nothing quite like building <span className="color-text"> projects</span>  to grow coding skills.</h2>
                 <div className='app__project-filter'>
-                    {["React","Wordpress", "HTML/CSS/JS", "Picapoint digital agency", "All"].map((item, index) => {
+                    {["React", "Wordpress", "HTML/CSS/JS", "Picapoint digital agency", "All"].map((item, index) => {
                         return (
                             <div
                                 key={`project-${index}`}
@@ -113,6 +113,10 @@ const Projects = () => {
 
                     })}
                 </motion.div>
+            </div>
+            <div className='app-project-button'>
+                <a class="primary-button" target="_blank"rel="noreferrer" href="https://github.com/CarolinaFledgling">
+                    ALL GITHUB REPOS</a>
             </div>
         </section>
     )
