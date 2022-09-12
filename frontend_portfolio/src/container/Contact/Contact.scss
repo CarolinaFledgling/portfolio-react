@@ -56,6 +56,11 @@
     font-weight: 700;
 }
 
+.app__contact-form-box{
+    display: flex;
+    flex-direction: column;
+}
+
 .app__contact-form-box input {
     width: 350px;
     padding: 20px;

@@ -47,7 +47,6 @@ const Header = () => {
             <div key={`datablock-${index}`} className="app__header-container">
               <div className="app__header-content">
                 <h1>{dataBlock.title}</h1>
-
                 <PortableText
                   value={dataBlock.textBlock}
                   components={myPortableTextComponents}
