@@ -50,7 +50,6 @@
     background-color: var(--primary-color);
 }
 
-
 .error-text {
     color: var(--red-color);
     margin-bottom: 0.5rem;
@@ -61,6 +60,7 @@
     width: 350px;
     padding: 20px;
     margin-bottom: 1rem;
+    margin-top: .5rem;
 
     padding: 0.95rem;
     border: none;
@@ -82,7 +82,7 @@
 .app__contact-form-box textarea {
     width: 350px;
     height: 100px;
-
+    margin-top: .5rem;
     padding: 0.95rem;
     border: none;
     border-radius: 7px;
@@ -97,6 +97,10 @@
         padding: 15px;
         margin-top: 20px;
     }
+}
+
+.app__contact-form-box label {
+    font-weight: 700;
 }
 
 .app__contact-btn {

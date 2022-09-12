@@ -137,7 +137,9 @@ const Contact = () => {
               <h3 className="app__contact-form-title">Contact form 📨</h3>
               <form>
                 <div className="app__contact-form-box">
+                  <label htmlFor="name">Name</label>
                   <input
+                    id="name"
                     className={`p-text ${errors.name ? "error-border" : ""}`}
                     type="text"
                     placeholder="Your Name"
@@ -149,7 +151,9 @@ const Contact = () => {
                   {errors.name && <p className="error-text">{errors.name}</p>}
                 </div>
                 <div className="app__contact-form-box">
+                  <label htmlFor="email">Email</label>
                   <input
+                    id="email"
                     className="p-text"
                     type="email"
                     placeholder="Your Email"
@@ -161,7 +165,9 @@ const Contact = () => {
                   {errors.email && <p className="error-text">{errors.email}</p>}
                 </div>
                 <div className="app__contact-form-box">
+                  <label htmlFor="message">Message</label>
                   <textarea
+                    id="message"
                     placeholder="Your Message"
                     name="message"
                     value={message}
@@ -174,24 +180,28 @@ const Contact = () => {
                 </div>
                 <div className="app__contact-form-box">
                   <h3 className="app__contact-heading">Check options:</h3>
-                  <select
-                    name="reason"
-                    onChange={handleChangeInput}
-                    onBlur={handleBlur}
-                  >
-                    <option value="" defaultValue>
-                      -- Please choose an option --
-                    </option>
-                    <option value="job offer">
-                      {" "}
-                      1. I have a job offer for you! 😊
-                    </option>
-                    <option value="checking, if you get this message in your Sanity Studio">
-                      {" "}
-                      2. I'm just checking, if you get this message in your
-                      Sanity Studio 😂
-                    </option>
-                  </select>
+                  <label>
+                    {" "}
+                    <select
+                      name="reason"
+                      onChange={handleChangeInput}
+                      onBlur={handleBlur}
+                    >
+                      <option value="" defaultValue>
+                        -- Please choose an option --
+                      </option>
+                      <option value="job offer">
+                        {" "}
+                        1. I have a job offer for you! 😊
+                      </option>
+                      <option value="checking, if you get this message in your Sanity Studio">
+                        {" "}
+                        2. I'm just checking, if you get this message in your
+                        Sanity Studio 😂
+                      </option>
+                    </select>
+                  </label>
+
                   {errors.reason && (
                     <p className="error-text">{errors.reason}</p>
                   )}
