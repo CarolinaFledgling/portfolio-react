@@ -1,7 +1,3 @@
-import AppWrap from './AppWrap';
+import AppWrap from "./AppWrap";
 
-
-export {
-    AppWrap,
-
-};
+export { AppWrap };

@@ -1,9 +1,8 @@
 const reasonValidation = (value) => {
-    if (!value) {
-        return 'Please choose an option'
-    }
-    return null
-}
+  if (!value) {
+    return "Please choose an option";
+  }
+  return null;
+};
 
-
-export default reasonValidation
+export default reasonValidation;
