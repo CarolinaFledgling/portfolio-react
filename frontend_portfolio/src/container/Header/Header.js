@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
+import Lottie from "lottie-react";
 import { motion } from "framer-motion";
 
 import "./Header.scss";
 import { PortableText } from "@portabletext/react";
 import { client } from "../../client";
 import getUrlFromProject from "../../helpers/getUrlFromProject";
+import womanAnimation from '../../assets/womanAnimation.json'
+
+
+const Example = () => {
+  return <Lottie animationData={womanAnimation} />;
+};
 
 const myPortableTextComponents = {
   marks: {
@@ -53,7 +60,7 @@ const Header = () => {
                 />
               </div>
 
-              <div className="app__header-image">
+              {/* <div className="app__header-image">
                 {url ? (
                   <img
                     src={getUrlFromProject(dataBlock)}
@@ -62,6 +69,9 @@ const Header = () => {
                 ) : (
                   ""
                 )}
+              </div> */}
+              <div className="app__header-image">
+                <Example />
               </div>
             </div>
           );
