@@ -9,7 +9,7 @@ import { client } from "../../client";
 import womanAnimation from '../../assets/womanAnimation.json'
 
 
-const Example = () => {
+const AnimationWoman = () => {
   return <Lottie animationData={womanAnimation} />;
 };
 
@@ -71,7 +71,7 @@ const Header = () => {
                 )}
               </div> */}
               <div className="app__header-image">
-                <Example />
+                <AnimationWoman />
               </div>
             </div>
           );
