@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import "./Header.scss";
 import { PortableText } from "@portabletext/react";
 import { client } from "../../client";
-import getUrlFromProject from "../../helpers/getUrlFromProject";
+// import getUrlFromProject from "../../helpers/getUrlFromProject";
 import womanAnimation from '../../assets/womanAnimation.json'
 
 
@@ -49,7 +49,7 @@ const Header = () => {
       >
         {dataBlockContent.map((dataBlock, index) => {
           //console.log('datablock', { dataBlock })
-          const url = getUrlFromProject(dataBlock);
+          // const url = getUrlFromProject(dataBlock);
           return (
             <div key={`datablock-${index}`} className="app__header-container">
               <div className="app__header-content">
