@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Lottie from "lottie-react";
-import { motion } from "framer-motion";
-
 import "./Header.scss";
 import { PortableText } from "@portabletext/react";
 import { client } from "../../client";
+import { AnimationWoman } from "../../LottieAnimation/AnimationWoman";
 // import getUrlFromProject from "../../helpers/getUrlFromProject";
-import womanAnimation from '../../assets/womanAnimation.json'
 
-
-const AnimationWoman = () => {
-  return <Lottie animationData={womanAnimation} />;
-};
 
 const myPortableTextComponents = {
   marks: {
