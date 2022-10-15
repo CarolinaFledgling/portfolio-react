@@ -42,9 +42,7 @@ const Header = () => {
 
   return (
     <header id="about" className="section">
-      <motion.div
-        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{ duration: 0.5 }}
+      <div
         className="app__header container"
       >
         {dataBlockContent.map((dataBlock, index) => {
@@ -76,7 +74,7 @@ const Header = () => {
             </div>
           );
         })}
-      </motion.div>
+      </div>
     </header>
   );
 };
