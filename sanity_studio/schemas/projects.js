@@ -45,6 +45,12 @@ export default {
                 }
             ]
         },
+        {
+            name: 'technologies',
+            title: 'Technologies',
+            type: 'array',
+            of: [{ type: 'string' }]
+        },
 
     ],
 };

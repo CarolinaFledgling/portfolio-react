@@ -40,7 +40,7 @@ const Skills = () => {
   return (
     <div id="skills" className="app__skills section">
       <div className="container">
-        <h2 className="heading-text">
+        <h2 className="app__skills-heading-text">
           It is not easy to assess your own{" "}
           <span className="color-text"> skills.</span>
         </h2>

@@ -3,7 +3,24 @@
     width: 100%;
     flex-direction: column;
 }
+.app__projects-heading-text {
+    font-size: 2.5rem;
+    text-align: center;
 
+    @media screen and (max-width: 900px) {
+        font-size: 1.5rem;
+    }
+}
+
+.app__projects-description {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--red-color);
+    @media screen and (max-width: 900px) {
+        font-size: 1rem;
+    }
+}
 .app__projects-title {
     padding: 3rem 1rem;
 
@@ -57,7 +74,7 @@
         flex-direction: column;
         width: 400px;
         margin: 2rem;
-        padding: 1rem;
+        padding: 1rem 1.5rem;
         border-radius: 0.5rem;
         background-color: #fff;
         color: #000;
@@ -189,6 +206,38 @@
         @media screen and (max-width: 900px) {
             padding: 0.6rem 1.3rem;
             font-size: 1rem;
+        }
+    }
+}
+
+.app__project-technologies {
+    padding: 3rem 0 0 0;
+    display: flex;
+
+    .app__technologies-header {
+        width: 30%;
+        font-size: 1rem;
+        color: var(--red-color);
+        font-weight: 600;
+ 
+
+        @media screen and (max-width: 564px) {
+            width: 40%;
+        }
+    }
+
+    .app__technologies-items {
+        width: 70%;
+        font-weight: 600;
+        font-size: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 564px) {
+            width: 60%;
+        }
+        span {
+            margin-left: 5px;
         }
     }
 }
