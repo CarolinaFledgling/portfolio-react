@@ -22,11 +22,9 @@
     }
 }
 .app__projects-title {
-    padding: 3rem 1rem;
-
-    @media screen and (max-width: 900px) {
-        padding: 1rem 1rem;
-    }
+    height: 70px;
+    padding: 1.5rem 0 1rem 0;
+    text-align: center;
 }
 
 .app__project-filter {

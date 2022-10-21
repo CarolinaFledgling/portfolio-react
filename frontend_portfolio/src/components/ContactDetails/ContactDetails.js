@@ -11,7 +11,7 @@ function ContactDetails() {
         <span>Norway</span>
       </div>
       <div className="app__contact-detail">
-        <a href="tel:+479670722">
+        <a href="tel:+479670722" aria-label='phone number'>
           <img src={Phone} alt=" icon with phone" />
           <span>+47 96707225</span>
         </a>
@@ -21,6 +21,7 @@ function ContactDetails() {
           href="mailto:karolina.kulinska89@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label='email'
         >
           <img src={Send} alt=" icon with envelope " />
           <span>karolina.kulinska89@gmail.com</span>

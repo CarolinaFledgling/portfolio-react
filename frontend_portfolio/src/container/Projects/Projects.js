@@ -98,7 +98,7 @@ const Projects = () => {
                                         rel="noreferrer"
                                         aria-label={`${ project.title}`}
                                     >
-                                        <h4 className="app__project-title">{project.title}</h4>
+                                        <h3 className="app__projects-title">{project.title}</h3>
                                     </a>
                                     <p className="app__project-description">
                                         {project.description}
@@ -113,6 +113,7 @@ const Projects = () => {
                                                 href={project.projectLink}
                                                 target="_blank"
                                                 rel="noreferrer"
+                                                aria-label={`${ project.title}`}
                                             >
                                                 <div className="app__project-icon">
                                                     <AiFillEye />
