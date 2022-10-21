@@ -46,7 +46,7 @@ const Skills = () => {
         </h2>
         <div className="app__skills-profiles">
           {skills?.map((skill, index) => (
-            <motion.div
+            <div
               whileInView={{ opacity: 1 }}
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.5, type: "tween" }}
@@ -62,7 +62,7 @@ const Skills = () => {
                   <li className="app__profile-skill">{description}</li>
                 </ul>
               ))}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
