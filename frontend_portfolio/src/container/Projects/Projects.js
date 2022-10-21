@@ -85,7 +85,7 @@ const Projects = () => {
                                 {/* img */}
 
                                 {url ? (
-                                    <img src={getUrlFromProject(project)} alt={project?.name} />
+                                    <img src={getUrlFromProject(project)} alt={project.title} />
                                 ) : (
                                     <span>No Image</span>
                                 )}
@@ -96,6 +96,7 @@ const Projects = () => {
                                         href={project.projectLink}
                                         target="_blank"
                                         rel="noreferrer"
+                                        aria-label={`${ project.title}`}
                                     >
                                         <h4 className="app__project-title">{project.title}</h4>
                                     </a>
