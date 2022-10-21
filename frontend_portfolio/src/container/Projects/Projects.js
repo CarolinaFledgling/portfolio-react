@@ -96,7 +96,7 @@ const Projects = () => {
                                         href={project.projectLink}
                                         target="_blank"
                                         rel="noreferrer"
-                                        aria-label={`${ project.title}`}
+                                        aria-label={`${ project.title} link`}
                                     >
                                         <h3 className="app__projects-title">{project.title}</h3>
                                     </a>
@@ -113,7 +113,7 @@ const Projects = () => {
                                                 href={project.projectLink}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                aria-label={`${ project.title}`}
+                                                aria-label={`${project.title} link`}
                                             >
                                                 <div className="app__project-icon">
                                                     <AiFillEye />
@@ -128,6 +128,7 @@ const Projects = () => {
                                                 href={project.codeLink}
                                                 target="_blank"
                                                 rel="noreferrer"
+                                                aria-label={`${project.title} link`}
                                             >
                                                 <div className="app__project-icon">
                                                     <AiFillGithub />
@@ -163,6 +164,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noreferrer"
                     href="https://github.com/CarolinaFledgling"
+                    aria-label="link to github projects"
                 >
                     ALL GITHUB REPOS
                 </a>
