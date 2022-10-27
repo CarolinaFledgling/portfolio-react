@@ -93,7 +93,9 @@
             margin: 0.5rem;
         }
 
+
         img {
+            height: 282px;
             width: 100%;
             object-fit: cover;
             border: 2px solid var(--bg-second-color);
@@ -217,7 +219,6 @@
         font-size: 1rem;
         color: var(--red-color);
         font-weight: 600;
- 
 
         @media screen and (max-width: 564px) {
             width: 40%;
