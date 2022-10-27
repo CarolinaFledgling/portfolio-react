@@ -7,12 +7,12 @@ function ContactDetails() {
   return (
     <>
       <div className="app__contact-detail">
-        <img src={Map} alt=" icon with map" height="35px" />
+        <img src={Map} alt=" icon with map"  />
         <span>Norway</span>
       </div>
       <div className="app__contact-detail">
         <a href="tel:+479670722" aria-label='phone number'>
-          <img src={Phone} alt=" icon with phone" height="35px" />
+          <img src={Phone} alt=" icon with phone"  />
           <span>+47 96707225</span>
         </a>
       </div>
@@ -23,7 +23,7 @@ function ContactDetails() {
           rel="noopener noreferrer"
           aria-label='email'
         >
-          <img src={Send} alt="icon with envelope" height="35px" />
+          <img src={Send} alt="icon with envelope"  />
           <span>karolina.kulinska89@gmail.com</span>
         </a>
       </div>
