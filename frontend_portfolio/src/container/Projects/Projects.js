@@ -48,8 +48,7 @@ const Projects = () => {
     <section id="projects" className="app__projects section">
       <div className="container">
         <h2 className="app__projects-heading-text">
-          There's nothing quite like building{" "}
-          <span className="color-text"> projects</span> to grow coding skills.
+        What I've Built
         </h2>
         <p className="app__projects-description">
           Filter projects by: commercial, personal and all{" "}
