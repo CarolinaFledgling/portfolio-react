@@ -14,7 +14,6 @@ In the contact section I built a form where someone can enter the name , email, 
 ## In the coming days I am planing : 
 
 - make it more UX friendly.
-- using react-select package
 - refactoring,  make reusebale components etc.   
 
 ## DEMO Link
