@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import {
+  AiFillEye,
+  AiFillGithub,
+  AiOutlineLogin,
+  AiOutlineDashboard,
+} from "react-icons/ai";
+
 import { motion } from "framer-motion";
 import { client } from "../../client";
 import "./Projects.scss";
@@ -47,9 +53,7 @@ const Projects = () => {
   return (
     <section id="projects" className="app__projects section">
       <div className="container">
-        <h2 className="app__projects-heading-text">
-        What I've Built
-        </h2>
+        <h2 className="app__projects-heading-text">What I've Built</h2>
         <p className="app__projects-description">
           Filter projects by: commercial, personal and all{" "}
         </p>
@@ -78,14 +82,13 @@ const Projects = () => {
         >
           {filterProjects?.map((project, index) => {
             const url = getUrlFromProject(project);
+            const hasLoginLink = !!project.loginLink;
+            const hasDashboardLink = !!project.dashboardLink;
             return (
-              //card
+              // card
               <div className="app__project-item" key={`project-${index}`}>
-
                 {url ? (
-        
-                    <img src={getUrlFromProject(project)} alt={project.title} />
-            
+                  <img src={getUrlFromProject(project)} alt={project.title} />
                 ) : (
                   <span>No Image</span>
                 )}
@@ -107,8 +110,35 @@ const Projects = () => {
                   <div className="app__project-tag">
                     <p className="app__project-paragraph">{project.tags[0]}</p>
                   </div>
+
                   <div className="app__project-icons">
-                    {project.projectLink ? (
+                    {hasLoginLink && (
+                      <a
+                        href={project.loginLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.title} login link`}
+                      >
+                        <div className="app__project-icon">
+                          <AiOutlineLogin />
+                        </div>
+                      </a>
+                    )}
+
+                    {hasDashboardLink && (
+                      <a
+                        href={project.dashboardLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.title} dashboard link`}
+                      >
+                        <div className="app__project-icon">
+                          <AiOutlineDashboard />
+                        </div>
+                      </a>
+                    )}
+
+                    {project.projectLink && (
                       <a
                         href={project.projectLink}
                         target="_blank"
@@ -119,39 +149,7 @@ const Projects = () => {
                           <AiFillEye />
                         </div>
                       </a>
-                    ) : (
-                      <p className="app__project-noLink">Link Coming Soon</p>
                     )}
-
-                    {project.codeLink && (
-                      <a
-                        href={project.codeLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.title} link`}
-                      >
-                        <div className="app__project-icon">
-                          <AiFillGithub />
-                        </div>
-                      </a>
-                    )}
-                  </div>
-                  <div className="app__project-technologies">
-                    <div className="app__technologies-header">
-                      <p>Technologies:</p>
-                    </div>
-                    <div className="app__technologies-items">
-                      {project.technologies?.map((item, index) => {
-                        return (
-                          <span key={index}>
-                            {item}
-                            {index === project.technologies?.length - 1
-                              ? ""
-                              : ","}
-                          </span>
-                        );
-                      })}
-                    </div>
                   </div>
                 </div>
               </div>

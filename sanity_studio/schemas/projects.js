@@ -25,6 +25,16 @@ export default {
             type: 'string',
         },
         {
+            name: 'loginLink',
+            title: 'Login Link',
+            type: 'string',
+        },
+        {
+            name: 'dashboardLink',
+            title: 'Dashboard Link',
+            type: 'string',
+        },
+        {
             name: 'imgUrl',
             title: 'ImageUrl',
             type: 'image',
