@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {
   AiFillEye,
-
   AiOutlineLogin,
   AiOutlineDashboard,
+  AiFillGithub,
 } from "react-icons/ai";
 
 import { motion } from "framer-motion";
@@ -84,6 +84,8 @@ const Projects = () => {
             const url = getUrlFromProject(project);
             const hasLoginLink = !!project.loginLink;
             const hasDashboardLink = !!project.dashboardLink;
+            const hasCodeLink = !!project.codeLink;
+            const hasProjectLink = !!project.projectLink;
             return (
               // card
               <div className="app__project-item" key={`project-${index}`}>
@@ -112,6 +114,18 @@ const Projects = () => {
                   </div>
 
                   <div className="app__project-icons">
+                    {hasCodeLink && (
+                      <a
+                        href={project.loginLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.title} login link`}
+                      >
+                        <div className="app__project-icon">
+                          <AiFillGithub />
+                        </div>
+                      </a>
+                    )}
                     {hasLoginLink && (
                       <a
                         href={project.loginLink}
@@ -138,7 +152,7 @@ const Projects = () => {
                       </a>
                     )}
 
-                    {project.projectLink && (
+                    {hasProjectLink && (
                       <a
                         href={project.projectLink}
                         target="_blank"
