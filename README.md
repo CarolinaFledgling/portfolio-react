@@ -7,14 +7,7 @@ With Sanity.io you can manage content.
 I created schemas where I can manage content of: skills, projects and save messages from form.
 In the contact section I built a form where someone can enter the name , email, and message. The entered data is sent over and saved in Sanity.
 
-## Status
 
-**Work-in-Progress**
-
-## In the coming days I am planing : 
-
-- make it more UX friendly.
-- refactoring,  make reusebale components etc.   
 
 ## DEMO Link
 
