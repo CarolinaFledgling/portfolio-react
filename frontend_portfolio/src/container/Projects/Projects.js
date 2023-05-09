@@ -165,6 +165,23 @@ const Projects = () => {
                       </a>
                     )}
                   </div>
+                  <div className="app__project-technologies">
+                    <div className="app__technologies-header">
+                      <p>Technologies:</p>
+                    </div>
+                    <div className="app__technologies-items">
+                      {project.technologies?.map((item, index) => {
+                        return (
+                          <span key={index}>
+                            {item}
+                            {index === project.technologies?.length - 1
+                              ? ""
+                              : ","}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             );
