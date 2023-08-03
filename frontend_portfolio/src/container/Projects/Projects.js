@@ -76,117 +76,113 @@ const Projects = () => {
         </div>
 
         <motion.div
-          animate={animateCard}
-          transition={{ duration: 0.5, delayChildren: 0.5 }}
-          className="app__project-portfolio"
-        >
-          {filterProjects?.map((project, index) => {
-            const url = getUrlFromProject(project);
-            const hasLoginLink = !!project.loginLink;
-            const hasDashboardLink = !!project.dashboardLink;
-            const hasCodeLink = !!project.codeLink;
-            const hasProjectLink = !!project.projectLink;
-            return (
-              // card
-              <div className="app__project-item" key={`project-${index}`}>
-                {url ? (
-                  <img src={getUrlFromProject(project)} alt={project.title} />
-                ) : (
-                  <span>No Image</span>
-                )}
+        animate={animateCard}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className="app__project-portfolio"
+      >
+        {filterProjects?.map((project, index) => {
+          const url = getUrlFromProject(project);
+          const hasLoginLink = !!project.loginLink;
+          const hasDashboardLink = !!project.dashboardLink;
+          const hasCodeLink = !!project.codeLink;
+          const hasProjectLink = !!project.projectLink;
+          return (
+            // card
+            <div className="app__project-item" key={`project-${index}`}>
+              {url ? (
+                <img src={getUrlFromProject(project)} alt={project.title} />
+              ) : (
+                <span>No Image</span>
+              )}
 
-                {/* card body */}
-                <div className="app__project-content">
-                  <a
-                    href={project.projectLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${project.title} link`}
-                  >
-                    <h3 className="app__projects-title">{project.title}</h3>
-                  </a>
-                  <p className="app__project-description">
-                    {project.description}
-                  </p>
+              {/* card body */}
+              <div className="app__project-content">
+                <a
+                  href={project.projectLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${project.title} link`}
+                >
+                  <h3 className="app__projects-title">{project.title}</h3>
+                </a>
+                <p className="app__project-description">{project.description}</p>
 
-                  <div className="app__project-tag">
-                    <p className="app__project-paragraph">{project.tags[0]}</p>
+                <div className="app__project-tag">
+                  <p className="app__project-paragraph">{project.tags[0]}</p>
+                </div>
+
+                <div className="app__project-icons">
+                  {hasCodeLink && (
+                    <a
+                      href={project.codeLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.title} code link`}
+                    >
+                      <div className="app__project-icon">
+                        <AiFillGithub />
+                      </div>
+                    </a>
+                  )}
+                  {hasLoginLink && (
+                    <a
+                      href={project.loginLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.title} login link`}
+                    >
+                      <div className="app__project-icon">
+                        <AiOutlineLogin />
+                      </div>
+                    </a>
+                  )}
+
+                  {hasDashboardLink && (
+                    <a
+                      href={project.dashboardLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.title} dashboard link`}
+                    >
+                      <div className="app__project-icon">
+                        <AiOutlineDashboard />
+                      </div>
+                    </a>
+                  )}
+
+                  {hasProjectLink && (
+                    <a
+                      href={project.projectLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.title} link`}
+                    >
+                      <div className="app__project-icon">
+                        <AiFillEye />
+                      </div>
+                    </a>
+                  )}
+                </div>
+                <div className="app__project-technologies">
+                  <div className="app__technologies-header">
+                    <p>Technologies:</p>
                   </div>
-
-                  <div className="app__project-icons">
-                    {hasCodeLink && (
-                      <a
-                        href={project.loginLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.title} login link`}
-                      >
-                        <div className="app__project-icon">
-                          <AiFillGithub />
-                        </div>
-                      </a>
-                    )}
-                    {hasLoginLink && (
-                      <a
-                        href={project.loginLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.title} login link`}
-                      >
-                        <div className="app__project-icon">
-                          <AiOutlineLogin />
-                        </div>
-                      </a>
-                    )}
-
-                    {hasDashboardLink && (
-                      <a
-                        href={project.dashboardLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.title} dashboard link`}
-                      >
-                        <div className="app__project-icon">
-                          <AiOutlineDashboard />
-                        </div>
-                      </a>
-                    )}
-
-                    {hasProjectLink && (
-                      <a
-                        href={project.projectLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`${project.title} link`}
-                      >
-                        <div className="app__project-icon">
-                          <AiFillEye />
-                        </div>
-                      </a>
-                    )}
-                  </div>
-                  <div className="app__project-technologies">
-                    <div className="app__technologies-header">
-                      <p>Technologies:</p>
-                    </div>
-                    <div className="app__technologies-items">
-                      {project.technologies?.map((item, index) => {
-                        return (
-                          <span key={index}>
-                            {item}
-                            {index === project.technologies?.length - 1
-                              ? ""
-                              : ","}
-                          </span>
-                        );
-                      })}
-                    </div>
+                  <div className="app__technologies-items">
+                    {project.technologies?.map((item, index) => {
+                      return (
+                        <span key={index}>
+                          {item}
+                          {index === project.technologies?.length - 1 ? "" : ","}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </motion.div>
+            </div>
+          );
+        })}
+      </motion.div>
       </div>
       <div className="app-project-button">
         <a

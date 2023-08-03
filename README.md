@@ -1,13 +1,10 @@
 ﻿# My portfolio Karolina Kulinska
 
-I built a frontend React-powered website connected to a headless Sanity (CMS ) backend that is fully responsible for content management.
+I have developed a frontend website using React, with a connected backend powered by Sanity CMS. The Sanity CMS handles all the content management tasks for the website.
 
-With Sanity.io you can manage content.
+With this setup, you can easily manage the content for various sections, such as skills, projects, and messages from the contact form. Speaking of the contact form, visitors can enter their name, email, and message, and this data is securely stored in Sanity CMS.
 
-I created schemas where I can manage content of: skills, projects and save messages from form.
-In the contact section I built a form where someone can enter the name , email, and message. The entered data is sent over and saved in Sanity.
-
-
+By combining the power of React for the frontend and Sanity CMS for content management, the website provides a user-friendly experience and simplifies the process of updating and managing content.
 
 ## DEMO Link
 
@@ -16,7 +13,6 @@ In the contact section I built a form where someone can enter the name , email, 
 ## See how the form works.
 
 https://user-images.githubusercontent.com/47687566/186982332-7207aae3-18a0-46e1-8aa7-878026f287ad.mp4
-
 
 ## Run Locally
 
@@ -32,7 +28,7 @@ Clone the project
   # Install dependencies
   npm install
   # to start the frontend locally
-  npm run start 
+  npm run start
 
 ```
 
@@ -46,6 +42,7 @@ Clone the project
 - REACT_APP_SANITY_TOKEN=
 
 [More info about sanity/client ](https://www.sanity.io/docs/js-client)
+
 ### I`m fetching the data from Sanity Studio.
 
 ```bash
@@ -53,7 +50,7 @@ Clone the project
   # Install dependencies
   npm install
   # To start the sanity studio locally
-  sanity start 
+  sanity start
 ```
 
 - sanity studio should be running on [http://localhost:3333](http://localhost:3333)
